@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Профиль пользователя</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .profile {
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      outline: 2px solid #333;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      color: navy;
+    }
+
+    p {
+      font-style: italic;
+      color: gray;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    ul li {
+      background: #e0f0ff;
+      margin: 5px 0;
+      padding: 5px;
+    }
+
+    img {
+      max-width: 200px;
+      display: block;
+      margin: 10px auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    td:hover {
+      background-color: #d0eaff;
+    }
+
+    /* Индикатор онлайн */
+    .status {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: green;
+      color: white;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile">
+    <div class="status">Онлайн</div>
+    <h1>Профиль: Muzaffar</h1>
+    <p>Фронтенд-разработчик и преподаватель в Developia</p>
+
+    <img src="https://via.placeholder.com/200" alt="Аватар пользователя">
+
+    <h3>Хобби:</h3>
+    <ul>
+      <li>Программирование</li>
+      <li>Машины</li>
+      <li>Игры</li>
+      <li>Путешествия</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Возраст</th>
+        <td>20</td>
+      </tr>
+      <tr>
+        <th>Город</th>
+        <td>Баку</td>
+      </tr>
+    </table>
+  </div>
+
+  <a href="home.html" aria-label="На главную" class="fixed z-50 bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-full shadow-lg">На главную</a>
+</body>
+</html>

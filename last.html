@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body{
+            font-family: 'Inter', sans-serif;
+            /* Gradient background without texture */
+            background: linear-gradient(to right, #2c3e50, #4c1d95); /* Gradient colors */
+        }
+        /* Контейнер для видео */
+        .video-container {
+            position: relative;
+            width: 48%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .video-controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .video-controls button:hover {
+            transform: scale(1.2);
+        }
+
+        /* Кнопки смены языка */
+        .language-button {
+            background-color: #1d4ed8;
+            color: white;
+            padding: 6px 12px;
+            margin-right: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .language-button:hover {
+            background-color: #2563eb;
+        }
+
+        /* Тексты */
+        .text-container {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin-top: 2rem;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Футер */
+        /* Футер */
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+
+        /* Обертка для всей страницы */
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-green-900 via-purple-800 to-pink-900 text-white">
+
+    <div class="page-wrapper">
+        <!-- Основной контент -->
+        <div class="content flex flex-col items-center py-8">
+
+            <!-- Видео -->
+            <div class="flex justify-center gap-4 mb-4 w-full px-4">
+                <div class="video-container">
+                    <video id="video1" src="../video/WhatsApp Video 2024-12-13 at 3.53.23 PM.mp4"></video>
+                    <div class="video-controls">
+                        <button onclick="document.getElementById('video1').play()">▶️</button>
+                        <button onclick="document.getElementById('video1').pause()">⏸️</button>
+                        <button
+                            onclick="document.getElementById('video1').muted = !document.getElementById('video1').muted">🔇</button>
+                        <button onclick="document.getElementById('video1').requestFullscreen()">⛶</button>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <video id="video2" src="../video/2_5273901960368510561.mp4"></video>
+                    <div class="video-controls">
+                        <button onclick="document.getElementById('video2').play()">▶️</button>
+                        <button onclick="document.getElementById('video2').pause()">⏸️</button>
+                        <button
+                            onclick="document.getElementById('video2').muted = !document.getElementById('video2').muted">🔇</button>
+                        <button onclick="document.getElementById('video2').requestFullscreen()">⛶</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопки для выбора языка -->
+            <div class="mb-4">
+                <button class="language-button" onclick="showText('rus')">RUS</button>
+                <button class="language-button" onclick="showText('aze')">AZE</button>
+                <button class="language-button" onclick="showText('eng')">ENG</button>
+            </div>
+
+            <!-- Тексты на трех языках -->
+            <div id="text-container" class="text-container" style="margin-top:-8px; margin-bottom: 0;">
+                <div id="rus" class="hidden">
+                    <p>Лингвистический анализ документов, интервью и выступлений в ходе
+                        Отечественной войны показал, что азербайджанский и русский языки, на
+                        котором свободно говорят граждане Азербайджана, пополнились новой
+                        лексикой, фразеологическими сочетаниями, синтаксическими
+                        конструкциями, символами и прецендентными текстами, которые
+                        доказывают о единстве нашего народа, вызывают чувство гордости и делают
+                        ощущение победы сакральным!</p>
+                </div>
+                <div id="aze">
+                    <p>Vətən Müharibəsi zamanı sənədlərin, müsahibələrin və çıxışların linqvistik təhlili
+                        göstərdi ki, Azərbaycan vətəndaşlarının səlis danışdıqları Azərbaycan və rus dilləri
+                        vəhdətini sübut edən xalqımızın qürur hissini oyadan və qələbə hissini müqəddəs
+                        edən yeni sözlər, frazeoloji birləşmələr, sintaktik strukturlar, simvollar və
+                        presedent mətnlərlə zənginləşib!</p>
+                </div>
+                <div id="eng" class="hidden">
+                    <p>Linguistic analysis of documents, interviews and speeches during the Patriotic War
+                        showed that the Azerbaijani and Russian languages, which are freely spoken by the
+                        citizens of Azerbaijan, were supplemented with new lexics, idioms, syntactic
+                        constructions, symbols and precedent texts that prove the unity of our people,
+                        evoke a sense of pride and make the feeling of victory sacred!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер -->
+        <footer>
+            &copy; 2024 Your Project. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Функция для отображения текста на выбранном языке
+        function showText(language) {
+            document.getElementById("rus").classList.add("hidden");
+            document.getElementById("aze").classList.add("hidden");
+            document.getElementById("eng").classList.add("hidden");
+            document.getElementById(language).classList.remove("hidden");
+        }
+    </script>
+
+</body>
+
+</html>

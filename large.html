@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык Победы — Карабах это Азербайджан</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            /* Refined gradient background */
+            background: linear-gradient(135deg, #0f172a 0%, #0b3b36 40%, #065f46 100%);
+        }
+
+        main {
+            flex: 1;
+        }
+
+        /* Стили для карусели */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        /* Стиль для кнопок навигации */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-size: 2rem;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body class="text-white p-4">
+
+    <main class="container mx-auto px-4">
+        <!-- Language Switch Buttons -->
+        <div class="flex justify-end mb-4 space-x-4">
+            <button onclick="changeLanguage('ru')" class="bg-gray-800 px-4 py-2 rounded">RUS</button>
+            <button onclick="changeLanguage('az')" class="bg-gray-800 px-4 py-2 rounded">AZE</button>
+            <button onclick="changeLanguage('en')" class="bg-gray-800 px-4 py-2 rounded">ENG</button>
+        </div>
+
+        <!-- Top Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Section -->
+            <div class="space-y-6">
+                <img src="../img/44 gunde vermək.JPG" alt="Шехид с медалями" class="rounded-lg shadow-lg">
+                <div class="carousel-container relative w-full mx-auto mt-8">
+                    <div id="carousel" class="carousel flex">
+                        <img src="../img/6.jpg" alt="Фото 1" class="w-full h-40 rounded-lg shadow-lg m-2">
+                        <img src="../img/7.jpg" alt="Фото 2" class="w-full h-40 rounded-lg shadow-lg m-2">
+                        <img src="../img/8.jpg" alt="Фото 3" class="w-full h-40 rounded-lg shadow-lg m-2">
+                    </div>
+                    <button onclick="prevSlide()" class="carousel-button left">←</button>
+                    <button onclick="nextSlide()" class="carousel-button right">→</button>
+                </div>
+        
+            </div>
+
+            <!-- Center Section -->
+            <div class="space-y-6">
+                <div class="bg-purple-800 p-6 rounded-lg">
+                    <h2 class="text-xl font-bold mb-4" id="title">Джейхун Шалиев</h2>
+                    <p id="description">
+                        Известный под прозвищем Алим, погиб на 4-й день войны в тяжелых боях на Физулинском фронте.
+                        Его тетя Рена Аляр (Мамедова), доцент кафедры общего языкознания БСУ, написала о нем книгу под
+                        названием «Сага о шехиде Джейхуне».
+                    </p>
+                </div>
+
+                <!-- Fan of Photos -->
+                <div class="relative mt-8 flex justify-center items-center">
+                    <div class="relative flex justify-center items-center w-full h-60 space-x-4">
+                        <img src="../img/1.jpg" alt="Фото 1"
+                            class="w-40 h-56 rounded-lg shadow-lg transform rotate-[-10deg]">
+                        <img src="../img/2.jpg" alt="Фото 2"
+                            class="w-40 h-56 rounded-lg shadow-lg transform rotate-[0deg]">
+                        <img src="../img/3.jpg" alt="Фото 3"
+                            class="w-40 h-56 rounded-lg shadow-lg transform rotate-[10deg]">
+                    </div>
+                </div>
+
+                <!-- Space for an additional photo -->
+                <div class="flex justify-center">
+                    <img src="../img/book.png" alt="Дополнительная фотография" class=" rounded-lg shadow-lg object-cover">
+                </div>
+
+            </div>
+
+            <!-- Right Section -->
+            <div class="space-y-6">
+                <img src="https://www.preslib.az/yeni/images/historical/up_5rMu.jpg" alt="Физули"
+                    class="rounded-lg shadow-lg">
+                <div class="space-y-4">
+                    <img src="../img/4.jpeg" alt="Замена видео"
+                        class="w-full rounded-lg shadow-lg object-cover">
+                </div>
+                <div class="p-4 bg-purple-900 rounded-lg">
+                    <p id="footer-text">Но кровь шехида не осталась не отомщенной...
+17 октября 2020-го года Физули был освобожден от армянских фашистов!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel -->
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-black/40 backdrop-blur-md border-t border-white/10 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p id="footer-copy">&copy; 2024 Выставка. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Language Change Script -->
+    <script>
+        const texts = {
+            ru: {
+                title: "Джейхун Шалиев",
+                description: "Известный под прозвищем Алим, погиб на 4-й день войны в тяжелых боях на Физулинском фронте. Его тетя Рена Аляр (Мамедова), доцент кафедры общего языкознания БСУ, написала о нем книгу под названием «Сага о шехиде Джейхуне».",
+                footer: "Но кровь шехида не осталась не отомщенной...\n17 октября 2020-го года Физули был освобожден от армянских фашистов!",
+                footerCopy: "© 2024 Выставка. Все права защищены."
+            },
+            az: {
+                title: "Ceyhun Şaliyev",
+                description: "Alim ləqəbi ilə tanınan Ceyhun, Füzuli cəbhəsində döyüşlərin 4-cü günündə qəhrəmancasına şəhid oldu. Onun bibisi Rena Alyar (Məmmədova), BSU-nun ümumi dilçilik kafedrasının dosenti, \"Ceyhun şəhidin dastanı\" adlı kitab yazıb.",
+                footer: "Şəhidlərin qisası alındı...\n17 otyabr 2020-ci ildə Füzuli erməni faşistlərdən azad olundu!",
+                footerCopy: "© 2024 Sərgi. Bütün hüquqlar qorunur."
+            },
+            en: {
+                title: "Jeyhun Shaliyev",
+                description: "Known by the nickname Alim, Jeyhun died heroically on the 4th day of the war during heavy battles on the Fizuli front. His aunt, Rena Alyar (Mammadova), Associate Professor at BSU's Department of General Linguistics, wrote a book called 'The Saga of Martyr Jeyhun.'",
+                footer: "The martyr's blood did not remain on the ground... On October 17, 2020, Fuzuli was liberated from the Armenian fascists!",
+                footerCopy: "© 2024 Exhibition. All rights reserved."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById('title').textContent = texts[lang].title;
+            document.getElementById('description').textContent = texts[lang].description;
+            document.getElementById('footer-text').textContent = texts[lang].footer;
+            const copy = document.getElementById('footer-copy');
+            if (copy && texts[lang].footerCopy) copy.textContent = texts[lang].footerCopy;
+        }
+    </script>
+
+    <!-- Carousel Script -->
+    <script>
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        function prevSlide() {
+            const totalSlides = document.querySelectorAll('.carousel img').length;
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            const totalSlides = document.querySelectorAll('.carousel img').length;
+            currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        }
+    </script>
+
+    <a href="home.html" aria-label="На главную" class="fixed z-50 bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-full shadow-lg">На главную</a>
+</body>
+
+</html>

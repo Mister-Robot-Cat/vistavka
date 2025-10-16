@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык Победы — Карабах это Азербайджан</title>
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                once: true, // Запустить анимации только один раз
+                startEvent: 'DOMContentLoaded' // Запуск анимации при загрузке страницы
+            });
+
+            const content = {
+                rus: {
+                    title: "Карабах – это Азербайджан!",
+                    ironFist: "Железный кулак",
+                    tatar: "Тертер",
+                    text1: `27 сентября 2020 года в ответ на провокацию армянских войск вдоль фронта азербайджанская армия начала контрнаступление, получившее название «Железный кулак». В ходе и по завершении войны «Железный кулак» стал символом единства азербайджанского народа. Для него была написана песня Эльнарой Халиловой, а в Ханкенди установлен памятник.`,
+                    text2: `Я говорил, что город Тертер во время Второй мировой войны напоминал разрушенный Сталинград. Ежедневно на этот небольшой город падали сотни снарядов, но никто не покидал его. А армяне бежали. Их "непобедимая" армия была разгромлена, началась паника, а глава хунты в Нагорном Карабахе издал приказ: кого поймают за дезертирство, будут судить. Велиyeва Севил.`,
+                    valday: `3 октября 2019 года Президент Азербайджанской Республики Ильхам Алиев принял участие на Пленарной сессии XVI ежегодного заседания Международного дискуссионного клуба «Валдай» в Сочи.
+Выражение «Карабах – это Азербайджан! И восклицательный знак» является прекрасным свидетельством того, что политический дискурс может выступать источником для формирования прецендентных явлений в языке. Произнесенная Президентом И. Алиевым фраза «Карабах – это Азербайджан! И восклицательный знак» быстро становится лозунгом и устойчивым словосочетанием в русской речи азербайджанцев.
+В настоящее время данный фразеологизм употребляется для выражения принятого говорящим решения, которое, с точки зрения говорящего, не подлежит дальнейшему обсуждению, должно быть принято беспрекословно; и является более экспрессивным, чем выражение «и точка», которое в русском языке находится в активном употреблении с 20-30-х гг. ХХ века.`
+                },
+                eng: {
+                    title: "Karabakh is Azerbaijan!",
+                    ironFist: "Iron Fist",
+                    tatar: "Tartar",
+                    text1: `On September 27, 2020, in response to Armenian provocations, the Azerbaijani army launched a counteroffensive named "Iron Fist." During and after the war, "Iron Fist" became a symbol of Azerbaijani unity. A song was composed by Elnara Khalilova, and a monument was erected in Khankendi.`,
+                    text2: `I said that the city of Tartar during World War II resembled the ruined Stalingrad. Every day, hundreds of shells fell on this small city, but no one left it. Meanwhile, the Armenians fled. Their "invincible" army was defeated, panic began, and the junta leader in Nagorno-Karabakh issued an order: anyone caught deserting would be tried. Valiyeva Sevil.`,
+                    valday: `On October 3, 2019, President of the Republic of Azerbaijan Ilham Aliyev attended the Plenary Session of the 16th Annual Meeting of the Valdai International Discussion Club in Sochi.
+The expression "Karabakh is Azerbaijan! And an exclamation mark" is an excellent example of how political discourse can serve as a source for the formation of precedent phenomena in language. The phrase "Karabakh is Azerbaijan! And an exclamation mark" uttered by President I. Aliyev is quickly becoming a slogan and a set phrase in the Russian speech of Azerbaijanis. Currently, this phraseological unit is used to express a decision made by the speaker, which, from the speaker's point of view, is not subject to further discussion, must be accepted unconditionally; and is more expressive than the expression "i tochka", which has been actively used in Russian since the 20-30s of the ХХth century.`
+                },
+                aze: {
+                    title: "Qarabağ Azərbaycandır!",
+                    ironFist: "Dəmir Yumruq",
+                    tatar: "Tərtər",
+                    text1: `27 sentyabr 2020-ci ildə Ermənistanın təxribatına cavab olaraq Azərbaycan ordusu "Dəmir Yumruq" adlı əks-hücum əməliyyatına başladı. Müharibə zamanı və sonrasında "Dəmir Yumruq" Azərbaycan xalqının birliyinin simvoluna çevrildi. Elnarə Xəlilovanın ifasında mahnı bəstələndi və Xankəndində abidə ucaldıldı.`,
+                    text2: `Mən dedim ki, Tərtər şəhəri İkinci Dünya müharibəsi dövründə dağıdılmış Stalinqrada bənzəyirdi. Bu kiçik şəhərə hər gün yüzlərlə mərmi düşürdü, amma heç kim oranı tərk etmədi. Ermənilər isə qaçdılar. Onların "məğlubedilməz" ordusu məğlub oldu, təşviş başladı və Dağlıq Qarabağdakı xunta başçısı belə bir əmr verdi: kim fərarilik etsə, məhkəmə qarşısına çıxarılacaq. Vəliyeva Sevil.`,
+                    valday: `Azərbaycan Respublikasının Prezidenti İlham Əliyev 3 oktyabr 2019-cu il tarixində Soçidə “Valday” Beynəlxalq Diskussiya Klubunun hər il keçirilən XVI Plenar sessiyasının iclasında iştirak etmişdir.
+“Qarabağ Azərbaycandır! Və nida işarəsi” siyasi diskursun dilində presedent hadisələrin formalaşması üçün mənbə rolunu oynaya biləcəyinə əla sübutudur. Prezident İ. Əliyevin dediyi “Qarabağ Azərbaycandır! Və nida işarəsi” ifadəsi tez bir zamanda azərbaycanlıların rus nitqində şüar ifadəsi və sabit söz birləşməsi kimi işlənməyə başlayır.
+Hal-hazırda bu frazeoloji vahid natiqin nöqteyi-nəzərindən əlavə müzakirəyə məruz qalmayan və şübhəsiz qəbul edilməli olan qərarı ifadə etmək üçün istifadə olunur; rus dilində XX əsrin 20-30-cu illərindən aktiv istifadə olunan “i toçka” (“və nöqtə”) ifadəsindən daha qüvvətli və təsirli ifadədir.`
+                }
+            };
+
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const lang = this.dataset.lang;
+
+                    // Apply fade-out effect
+                    document.getElementById('main-title').classList.add('fade-out');
+                    document.getElementById('iron-fist-title').classList.add('fade-out');
+                    document.getElementById('tatar-title').classList.add('fade-out');
+                    document.getElementById('iron-fist-text').classList.add('fade-out');
+                    document.getElementById('valday-text')?.classList.add('fade-out');
+                    document.getElementById('tatar-text').classList.add('fade-out');
+
+                    setTimeout(() => {
+                        // Change content after fade-out
+                        document.getElementById('main-title').innerText = content[lang].title;
+                        document.getElementById('iron-fist-title').innerText = content[lang].ironFist;
+                        document.getElementById('tatar-title').innerText = content[lang].tatar;
+                        document.getElementById('iron-fist-text').innerText = content[lang].text1;
+                        if (content[lang].valday !== undefined && document.getElementById('valday-text')) {
+                            document.getElementById('valday-text').innerText = content[lang].valday;
+                        }
+                        document.getElementById('tatar-text').innerText = content[lang].text2;
+
+                        // Apply fade-in effect
+                        document.getElementById('main-title').classList.remove('fade-out');
+                        document.getElementById('main-title').classList.add('fade-in');
+                        document.getElementById('iron-fist-title').classList.remove('fade-out');
+                        document.getElementById('iron-fist-title').classList.add('fade-in');
+                        document.getElementById('tatar-title').classList.remove('fade-out');
+                        document.getElementById('tatar-title').classList.add('fade-in');
+                        document.getElementById('iron-fist-text').classList.remove('fade-out');
+                        document.getElementById('iron-fist-text').classList.add('fade-in');
+                        document.getElementById('valday-text')?.classList.remove('fade-out');
+                        document.getElementById('valday-text')?.classList.add('fade-in');
+                        document.getElementById('tatar-text').classList.remove('fade-out');
+                        document.getElementById('tatar-text').classList.add('fade-in');
+                    }, 300); // delay content change to allow fading effect
+                });
+            });
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Refined gradient background */
+            background: linear-gradient(135deg, #0f172a 0%, #0b3b36 40%, #065f46 100%);
+            background-size: cover;
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            color: #fff;
+        }
+
+        .lang-switcher-container {
+            margin-bottom: 20px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            background-color: #2d3748;
+            color: white;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .lang-btn:hover {
+            background-color: #4a5568;
+            transform: scale(1.1);
+        }
+
+        .lang-btn:active {
+            background-color: #1a202c;
+        }
+
+        /* Smooth transition for text change */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Video player styles */
+        .custom-video-player {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            max-width: 1000px; /* Increase the width */
+            margin: 0 auto;
+        }
+
+        .custom-video-player video {
+            width: 100%;
+            display: block;
+            border-radius: 0.5rem;
+        }
+
+        .custom-video-player .controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .custom-video-player .controls .left-controls,
+        .custom-video-player .controls .right-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .custom-video-player:hover .controls {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .custom-video-player .controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-video-player .controls button:hover {
+            transform: scale(1.2);
+        }
+
+        /* Enhanced text styles */
+        .main-title {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-transform: uppercase; /* Capitalize the text */
+        }
+
+        .section-title {
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+            text-transform: uppercase; /* Capitalize the text */
+        }
+
+        .text-content {
+            background: rgba(0, 0, 0, 0.72); /* stronger darkening for readability */
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+            backdrop-filter: saturate(120%) blur(2px);
+        }
+
+        .img-rounded {
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .img-rounded:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Основной контейнер -->
+    <div class="container mx-auto px-6 py-12" data-aos="fade-down">
+
+        <!-- Языковой переключатель -->
+        <div class="lang-switcher-container">
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="rus">RUS</button>
+                <button class="lang-btn" data-lang="eng">ENG</button>
+                <button class="lang-btn" data-lang="aze">AZE</button>
+            </div>
+        </div>
+
+        <!-- Заголовки -->
+        <div class="flex flex-col items-center mb-16">
+            <h1 id="main-title" class="text-6xl font-extrabold main-title uppercase tracking-wide transform transition duration-500 mb-8">
+                Карабах – это Азербайджан!</h1>
+        </div>
+
+        <!-- Video + Valday Text in a row -->
+        <div class="flex flex-col lg:flex-row items-start gap-8 mb-12">
+            <!-- Video left -->
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+                <div class="custom-video-player">
+                    <video>
+                        <source src="../video/Valday.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="controls">
+                        <div class="flex items-center gap-3 w-full">
+                            <button class="play-btn px-2 py-1 rounded hover:bg-white/10" title="Play/Pause">▶️</button>
+                            <input type="range" class="progress w-full" min="0" max="100" value="0">
+                            <div class="time text-sm tabular-nums w-28 text-right">0:00 / 0:00</div>
+                            <input type="range" class="volume w-24" min="0" max="1" step="0.05" value="1" title="Громкость">
+                            <button class="mute-btn px-2 py-1 rounded hover:bg-white/10" title="Mute">🔊</button>
+                            <button class="fs-btn px-2 py-1 rounded hover:bg-white/10" title="Fullscreen">⛶</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text right -->
+            <div class="w-full lg:w-1/2">
+                <p id="valday-text" class="text-lg text-content fade-in">
+3 октября 2019 года Президент Азербайджанской Республики Ильхам Алиев принял участие на Пленарной сессии XVI ежегодного заседания Международного дискуссионного клуба «Валдай» в Сочи.
+Выражение «Карабах – это Азербайджан! И восклицательный знак» является прекрасным свидетельством того, что политический дискурс может выступать источником для формирования прецендентных явлений в языке. Произнесенная Президентом И. Алиевым фраза «Карабах – это Азербайджан! И восклицательный знак» быстро становится лозунгом и устойчивым словосочетанием в русской речи азербайджанцев.
+В настоящее время данный фразеологизм употребляется для выражения принятого говорящим решения, которое, с точки зрения говорящего, не подлежит дальнейшему обсуждению, должно быть принято беспрекословно; и является более экспрессивным, чем выражение «и точка», которое в русском языке находится в активном употреблении с 20-30-х гг. ХХ века.
+                </p>
+            </div>
+        </div>
+
+        <!-- Железный кулак -->
+        <div class="flex flex-col items-center mb-12">
+            <h2 id="iron-fist-title" class="text-4xl font-bold section-title mb-6">ЖЕЛЕЗНЫЙ КУЛАК</h2>
+            <div class="flex flex-col lg:flex-row items-center gap-6">
+                <div class="w-full lg:w-1/2">
+                    <p id="iron-fist-text" class="text-lg text-content">
+                        27 сентября 2020 года в ответ на провокацию армянских войск вдоль фронта азербайджанская армия
+                        начала контрнаступление, получившее название «Железный кулак». В ходе и по завершении войны
+                        «Железный кулак» стал символом единства азербайджанского народа. Для него была написана песня
+                        Эльнарой Халиловой, а в Ханкенди установлен памятник.
+                    </p>
+                </div>
+                <div class="w-full lg:w-1/3 flex justify-end">
+                    <img src="../img/DALL·E 2024-12-12 21.08.42 - A realistic depiction of an iron fist symbolizing the strength and resilience of Azerbaijan. The fist should be metallic, strong, and clenched tightly.webp" alt="Железный кулак" class="rounded-lg img-rounded">
+                </div>
+            </div>
+        </div>
+        <!-- Тертер -->
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 id="tatar-title" class="text-4xl font-bold section-title mb-6">ТЕРТЕР</h2>
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-6">
+                <img src="https://images.oxu.az/2024/10/28/M34Fh1CAVKlkkexddTwrmf1DiOZnpHyXPNJAZoSB:1200.jpg"
+                     alt="Описание фотографии" class="w-full lg:w-1/2 img-rounded float-left mr-6 mb-4">
+                <div class="w-full lg:w-1/2">
+                    <p id="tatar-text" class="text-lg text-content max-w-2xl">
+                        Сталинград – город, борьба за который стала переломным в войне с
+                        фашистами. Это была одна из самых жестоких и кровопролитных битв в
+                        истории человечества, в результате которых полностью был уничтожен
+                        прекрасный город и умерло почти 100 000 жителей. Именно тогда в русском
+                        языке появлется выражение «Ни шагу назад!», которое первоначально было
+                        народным названием приказа № 277, данного Сталиным от 28 июля 1942
+                        года.
+                        Сравнение Тертера с Сталинградом не случайно.
+                        Во время Отечественной войны Тертер был несколько раз обстрелен
+                        армянскими фашистами. На него было выбрашено 16277 кассетных бомб и
+                        выпущена 21 ракета. Несмотря на то, что город был почти разрушен, ни один
+                        горожанин не покинул своих домов. Ту же картину можно было наблюдать
+                        при обстреле мирных жителей Гянджи, Барды и Агдама. Мужество и героизм
+                        гражданского населения Азербайджана упомянутых городов заслуживает
+                        особого почета и уважения.
+                        В статье Сталинград является прецендентным названием, демонстрирующим
+                        мужество людей.
+                    </p>
+                    <div class="mt-4">
+                        <a href="../files/valday.pdf" download class="inline-flex items-center gap-2 px-3 py-2 bg-red-600 hover:bg-red-700 text-white text-sm rounded shadow" aria-label="Скачать PDF">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+                              <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8l6-6V4a2 2 0 0 0-2-2H6zm8 18v-4a2 2 0 0 1 2-2h4l-6 6z"/>
+                              <text x="7" y="15" font-size="6" fill="#fff">PDF</text>
+                            </svg>
+                            <span>PDF</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Выставка. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.querySelectorAll('.custom-video-player').forEach(player => {
+            const video = player.querySelector('video');
+            const playBtn = player.querySelector('.play-btn');
+            const muteBtn = player.querySelector('.mute-btn');
+            const fsBtn = player.querySelector('.fs-btn');
+            const progress = player.querySelector('.progress');
+            const volume = player.querySelector('.volume');
+            const time = player.querySelector('.time');
+
+            function formatTime(s) {
+                s = Math.floor(s);
+                const m = Math.floor(s / 60);
+                const sec = String(s % 60).padStart(2, '0');
+                return `${m}:${sec}`;
+            }
+
+            function updateTime() {
+                if (!isNaN(video.duration)) {
+                    time.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+                    progress.value = (video.currentTime / video.duration) * 100 || 0;
+                }
+            }
+
+            playBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playBtn.textContent = '⏸️';
+                } else {
+                    video.pause();
+                    playBtn.textContent = '▶️';
+                }
+            });
+
+            muteBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                muteBtn.textContent = video.muted ? '🔇' : '🔊';
+            });
+
+            fsBtn.addEventListener('click', () => {
+                (player.requestFullscreen || player.webkitRequestFullscreen || player.msRequestFullscreen)?.call(player);
+            });
+
+            progress.addEventListener('input', () => {
+                if (!isNaN(video.duration)) {
+                    video.currentTime = (progress.value / 100) * video.duration;
+                }
+            });
+
+            volume.addEventListener('input', () => {
+                video.volume = volume.value;
+                if (video.volume === 0) {
+                    video.muted = true;
+                    muteBtn.textContent = '🔇';
+                } else {
+                    video.muted = false;
+                    muteBtn.textContent = '🔊';
+                }
+            });
+
+            video.addEventListener('timeupdate', updateTime);
+            video.addEventListener('loadedmetadata', updateTime);
+            video.addEventListener('play', () => playBtn.textContent = '⏸️');
+            video.addEventListener('pause', () => playBtn.textContent = '▶️');
+        });
+    </script>
+    <a href="home.html" aria-label="На главную" class="fixed z-50 bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-full shadow-lg">На главную</a>
+</body>
+
+</html>

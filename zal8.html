@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zal 8</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #0b3b36 40%, #065f46 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+    .custom-video-player {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+      background: rgba(0,0,0,0.2);
+    }
+    .custom-video-player video { width: 100%; display: block; border-radius: 0.5rem; }
+    .custom-video-player .controls {
+      position: absolute; bottom: 0; left: 0; width: 100%;
+      background: rgba(0,0,0,0.55);
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.5rem 0.75rem; box-sizing: border-box;
+      transition: background 0.3s ease;
+    }
+    .custom-video-player:hover .controls { background: rgba(0,0,0,0.75); }
+    .custom-video-player .controls button {
+      background: none; border: none; color: white; font-size: 1.1rem; cursor: pointer;
+    }
+    .custom-video-player .controls .time { min-width: 110px; text-align: right; }
+  </style>
+</head>
+<body class="text-white">
+  <!-- Navbar -->
+  <nav class="fixed w-full top-0 left-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      
+      <!-- Левая часть: Лого + Название -->
+      <div class="flex items-center space-x-3">
+        <img src="../img/xari-bulbul.jpeg" alt="Лого" class="w-10 h-10">
+        <span class="text-2xl font-extrabold tracking-wide">44 günlük Vətən müharibəsi dilçilərin gözü ilə</span>
+      </div>
+
+      <!-- Правая часть: Кнопки -->
+      <div class="flex space-x-6">
+        <a href="home.html" class="hover:text-green-400 transition">Ana səhifə</a>
+        <a href="undergreen.html" class="hover:text-green-400 transition">Zal 1</a>
+        <a href="green.html" class="hover:text-green-400 transition">Zal 2</a>
+        <a href="shusha.html" class="hover:text-green-400 transition">Zal 3</a>
+        <a href="large.html" class="hover:text-green-400 transition">Zal 4</a>
+        <a href="small.html" class="hover:text-green-400 transition">Zal 5</a>
+        <a href="poetry.html" class="hover:text-green-400 transition">Zal 6</a>
+        <a href="linguist.html" class="hover:text-green-400 transition">Zal 7</a>
+        <a href="zal8.html" class="hover:text-green-400 transition">Zal 8</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="container mx-auto px-6 py-12">
+    <div class="text-center mb-10" data-aos="fade-down">
+      <!-- <h2 class="text-4xl font-bold">İki video</h2>
+      <p class="opacity-80">Faylları \video qovluğuna əlavə etdikdən sonra bu pəncərədən oynadın.</p> -->
+    </div>
+
+    <!-- Two players: stack on mobile, side-by-side on lg -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10" data-aos="fade-up">
+      <!-- Player 1 -->
+      <div>
+        <div class="custom-video-player">
+          <video>
+            <source src="../video/2_5273901960368510561.mp4" type="video/mp4">
+            Sizin brauzer video dəstəkləmir.
+          </video>
+          <div class="controls">
+            <button class="play-btn" title="Play/Pause">▶️</button>
+            <input type="range" class="progress w-full" min="0" max="100" value="0">
+            <div class="time text-sm tabular-nums">0:00 / 0:00</div>
+            <input type="range" class="volume w-28" min="0" max="1" step="0.05" value="1" title="Səs">
+            <button class="mute-btn" title="Mute">🔊</button>
+            <button class="fs-btn" title="Fullscreen">⛶</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 2 -->
+      <div>
+        <div class="custom-video-player">
+          <video>
+            <source src="../video/video.mp4" type="video/mp4">
+            Sizin brauzer video dəstəkləmir.
+          </video>
+          <div class="controls">
+            <button class="play-btn" title="Play/Pause">▶️</button>
+            <input type="range" class="progress w-full" min="0" max="100" value="0">
+            <div class="time text-sm tabular-nums">0:00 / 0:00</div>
+            <input type="range" class="volume w-28" min="0" max="1" step="0.05" value="1" title="Səs">
+            <button class="mute-btn" title="Mute">🔊</button>
+            <button class="fs-btn" title="Fullscreen">⛶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <a href="home.html" aria-label="Na glavnuju" class="fixed z-50 bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-full shadow-lg">Ana səhifə</a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, startEvent: 'DOMContentLoaded' });
+
+    document.querySelectorAll('.custom-video-player').forEach(player => {
+      const video = player.querySelector('video');
+      const playBtn = player.querySelector('.play-btn');
+      const muteBtn = player.querySelector('.mute-btn');
+      const fsBtn = player.querySelector('.fs-btn');
+      const progress = player.querySelector('.progress');
+      const volume = player.querySelector('.volume');
+      const time = player.querySelector('.time');
+
+      function formatTime(s) {
+        s = Math.floor(s);
+        const m = Math.floor(s / 60);
+        const sec = String(s % 60).padStart(2, '0');
+        return `${m}:${sec}`;
+      }
+
+      function updateTime() {
+        if (!isNaN(video.duration)) {
+          time.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+          progress.value = (video.currentTime / video.duration) * 100 || 0;
+        }
+      }
+
+      playBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          playBtn.textContent = '⏸️';
+        } else {
+          video.pause();
+          playBtn.textContent = '▶️';
+        }
+      });
+
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        muteBtn.textContent = video.muted ? '🔇' : '🔊';
+      });
+
+      fsBtn.addEventListener('click', () => {
+        (player.requestFullscreen || player.webkitRequestFullscreen || player.msRequestFullscreen)?.call(player);
+      });
+
+      progress.addEventListener('input', () => {
+        if (!isNaN(video.duration)) {
+          video.currentTime = (progress.value / 100) * video.duration;
+        }
+      });
+
+      volume.addEventListener('input', () => {
+        video.volume = volume.value;
+        if (video.volume === 0) {
+          video.muted = true; muteBtn.textContent = '🔇';
+        } else {
+          video.muted = false; muteBtn.textContent = '🔊';
+        }
+      });
+
+      video.addEventListener('timeupdate', updateTime);
+      video.addEventListener('loadedmetadata', updateTime);
+      video.addEventListener('play', () => playBtn.textContent = '⏸️');
+      video.addEventListener('pause', () => playBtn.textContent = '▶️');
+    });
+  </script>
+</body>
+</html>
